@@ -58,7 +58,7 @@ export default function Home() {
         </h2>
         <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 my-16 p-8 w-full place-items-center">
           <div className="relative">
-            <Image src={rect1} alt="card1" width={250} height={200} />
+            <Image src={rect1} alt="card1" width={250} height={250} />
             <div className="absolute flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
               <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
                 <h3 className="text-slate-50 h-fit  p-1">
@@ -72,7 +72,7 @@ export default function Home() {
             </div>
           </div>
           <div className="relative">
-            <Image src={rect2} alt="card1" width={250} height={200} />
+            <Image src={rect2} alt="card1" width={250} height={250} />
             <div className="absolute flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
               <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
                 <h3 className="text-slate-50 h-fit  p-1">
@@ -86,7 +86,7 @@ export default function Home() {
             </div>
           </div>
           <div className="relative">
-            <Image src={rect3} alt="card1" width={250} height={200} />
+            <Image src={rect3} alt="card1" width={250} height={250} />
             <div className="absolute flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
               <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
                 <h3 className="text-slate-50 h-fit  p-1">
@@ -100,7 +100,7 @@ export default function Home() {
             </div>
           </div>
           <div className="relative rounded-2xl">
-            <Image src={rect4} alt="card1" width={250} height={200} />
+            <Image src={rect4} alt="card1" width={250} height={250} />
             <div className="absolute flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
               <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
                 <h3 className="text-slate-50 h-fit  p-1">
