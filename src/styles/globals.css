@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Jaapokki Subtract Regular";
+  src: url("../../public/assets/fonts/Jaapokkisubtract-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   background-color: #151515;
+  font-family: "Jaapokki Subtract Regular", "sans-serif";
 }
+
 /*
 @media (prefers-color-scheme: dark) {
   :root {

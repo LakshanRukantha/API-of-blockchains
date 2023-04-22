@@ -9,6 +9,7 @@ import rect1 from "../../public/assets/images/rect1.png";
 import rect2 from "../../public/assets/images/rect2.png";
 import rect3 from "../../public/assets/images/rect3.png";
 import rect4 from "../../public/assets/images/rect4.png";
+import robots02 from "../../public/assets/images/robots-02.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,11 +39,11 @@ export default function Home() {
           width={200}
           height={200}
         />
-        <h2 className="text-center text-[#20E3A1] text-2xl font-bold pt-8 pb-2">
-          Community-owned
+        <h2 className="text-center text-[#20E3A1] text-2xl pt-8 pb-2">
+          Community-Owned
         </h2>
-        <h1 className="text-center text-slate-50 text-4xl font-bold">
-          API of blockchains.
+        <h1 className="text-center text-slate-50 text-4xl font-jaapokkiSubtract">
+          API Of Blockchains.
         </h1>
         <Image
           className="m-auto py-8 pr-16"
@@ -53,13 +54,13 @@ export default function Home() {
         />
       </div>
       <div>
-        <h2 className="text-2xl text-slate-50 font-bold text-center flex m-auto mt-12 max-w-xs">
+        <h2 className="text-2xl text-slate-50 text-center flex m-auto mt-12 max-w-xs">
           With AI algorithms running on the network
         </h2>
         <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 my-16 p-8 w-full place-items-center">
-          <div className="relative">
+          <div className="relative transition ease-in-out hover:scale-105">
             <Image src={rect1} alt="card1" width={250} height={250} />
-            <div className="absolute flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
+            <div className="absolute border-4 border-zinc-500 hover:border-[#20E3A1] flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
               <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
                 <h3 className="text-slate-50 h-fit  p-1">
                   Community- owned API of blockchains.
@@ -71,48 +72,68 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative transition ease-in-out hover:scale-105">
             <Image src={rect2} alt="card1" width={250} height={250} />
-            <div className="absolute flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
+            <div className="absolute border-4 border-zinc-500 hover:border-[#20E3A1] flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
               <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
-                <h3 className="text-slate-50 h-fit  p-1">
+                <h3 className="text-slate-50 h-fit p-1">
                   Community- owned API of blockchains.
                 </h3>
-                <h4 className="text-slate-50 text-sm  p-1">
+                <h4 className="text-slate-50 text-sm p-1">
                   Another benefit of AI blockchains is their potential to enable
                   new applications and use cases.
                 </h4>
               </div>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative transition ease-in-out hover:scale-105">
             <Image src={rect3} alt="card1" width={250} height={250} />
-            <div className="absolute flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
+            <div className="absolute border-4 border-zinc-500 hover:border-[#20E3A1] flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
               <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
-                <h3 className="text-slate-50 h-fit  p-1">
+                <h3 className="text-slate-50 h-fit p-1">
                   Community- owned API of blockchains.
                 </h3>
-                <h4 className="text-slate-50 text-sm  p-1">
+                <h4 className="text-slate-50 text-sm p-1">
                   Another benefit of AI blockchains is their potential to enable
                   new applications and use cases.
                 </h4>
               </div>
             </div>
           </div>
-          <div className="relative rounded-2xl">
+          <div className="relative transition ease-in-out hover:scale-105">
             <Image src={rect4} alt="card1" width={250} height={250} />
-            <div className="absolute flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
+            <div className="absolute border-4 border-zinc-500 hover:border-[#20E3A1] flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
               <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
-                <h3 className="text-slate-50 h-fit  p-1">
+                <h3 className="text-slate-50 h-fit p-1">
                   Community- owned API of blockchains.
                 </h3>
-                <h4 className="text-slate-50 text-sm  p-1">
+                <h4 className="text-slate-50 text-sm p-1">
                   Another benefit of AI blockchains is their potential to enable
                   new applications and use cases.
                 </h4>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="container h-72 max-w-screen-xl flex flex-col mx-auto md:flex-row md:justify-center w-full place-items-center mt-40 p-8">
+        <div className="flex flex-col align-middle justify-around md:w-1/3 h-full">
+          <h2 className="text-slate-50 text-3xl text-left my-2">
+            Build A Stunning Social Network
+          </h2>
+          <p className="text-slate-50 mb-4">
+            Another benefit of AI blockchains is their potential to enable new
+            applications and use cases.
+          </p>
+          <button
+            type="button"
+            className="text-[#20E3A1] bg-[#0E1436] border-2 w-fit px-4 py-1 rounded-tr-lg border-[#20E3A1] mb-8"
+          >
+            Read More
+          </button>
+        </div>
+        <div className="relative -left-8 w-full  md:w-1/2">
+          <Image src={robots02} alt="card1" width={650} height={250} />
         </div>
       </div>
     </>
