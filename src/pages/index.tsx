@@ -1,6 +1,8 @@
 import NavBar from "@/components/NavBar";
 import { Inter } from "next/font/google";
 import Image from "next/image";
+import { FaLinkedin, FaFacebook, FaTwitter } from "react-icons/fa";
+import logo from "../../public/assets/images/logo.png";
 import robots01 from "../../public/assets/images/robots-01.png";
 import polygon01 from "../../public/assets/images/polygon-1.png";
 import polygon02 from "../../public/assets/images/polygon-2.png";
@@ -10,6 +12,9 @@ import rect2 from "../../public/assets/images/rect2.png";
 import rect3 from "../../public/assets/images/rect3.png";
 import rect4 from "../../public/assets/images/rect4.png";
 import robots02 from "../../public/assets/images/robots-02.png";
+import person01 from "../../public/assets/images/person-01.png";
+import person02 from "../../public/assets/images/person-02.png";
+import person03 from "../../public/assets/images/person-03.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -116,7 +121,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="container h-72 max-w-screen-xl flex flex-col mx-auto md:flex-row md:justify-center w-full place-items-center mt-40 p-8">
+      <div className="container max-w-screen-xl flex flex-col mx-auto md:flex-row md:justify-center w-full place-items-center mt-20 p-8 bg-black bg-opacity-20 rounded-md">
         <div className="flex flex-col align-middle justify-around md:w-1/3 h-full">
           <h2 className="text-slate-50 text-3xl text-left my-2">
             Build A Stunning Social Network
@@ -127,13 +132,137 @@ export default function Home() {
           </p>
           <button
             type="button"
-            className="text-[#20E3A1] bg-[#0E1436] border-2 w-fit px-4 py-1 rounded-tr-lg border-[#20E3A1] mb-8"
+            className="text-[#20E3A1] bg-[#0E1436] border-2 w-fit px-4 py-2 rounded-tr-lg border-[#20E3A1] mb-8"
           >
             Read More
           </button>
         </div>
         <div className="relative -left-8 w-full  md:w-1/2">
           <Image src={robots02} alt="card1" width={650} height={250} />
+        </div>
+      </div>
+      <div className="mt-16">
+        <h2 className="text-2xl text-slate-50 text-center flex m-auto my-12 mb-20 max-w-xs">
+          Testimonials from lovely previous buyers.
+        </h2>
+        <div className="grid grid-cols-1 gap-4 place-items-center md:grid-cols-2 lg:grid-cols-3 my-8">
+          <div className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out">
+            <div className="relative flex items-center justify-center -top-8 w-16 h-16 mx-auto rounded-full overflow-hidden border-4 border-x-transparent border-y-[#20E3A1]">
+              <Image
+                src={person01}
+                width={100}
+                height={100}
+                alt="person1"
+                className="object-cover object-center w-full h-full"
+              />
+            </div>
+            <p className="relative text-gray-400 -top-4 p-4">
+              "Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Dignissimos quos, a quae voluptas voluptatum qui molestias quidem
+              laborum eos labore reiciendis numquam aperiam animi molestiae."
+              <span className="flex flex-col items-end mt-2 text-sm">
+                - Ethan Brown -
+              </span>
+            </p>
+          </div>
+          <div className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out">
+            <div className="relative -top-8 w-16 h-16 mx-auto rounded-full overflow-hidden border-4 border-x-transparent border-y-[#20E3A1]">
+              <Image
+                src={person02}
+                width={100}
+                height={100}
+                alt="person2"
+                className="object-cover object-center w-full h-full"
+              />
+            </div>
+            <p className="relative text-gray-400 -top-4 p-4">
+              "Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Dignissimos quos, a quae voluptas voluptatum qui molestias quidem
+              laborum eos labore reiciendis numquam aperiam animi molestiae."
+              <span className="flex flex-col items-end mt-2 text-sm">
+                - Sophia Garcia -
+              </span>
+            </p>
+          </div>
+          <div className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out">
+            <div className="relative -top-8 w-16 h-16 mx-auto rounded-full overflow-hidden border-4 border-x-transparent border-y-[#20E3A1]">
+              <Image
+                src={person03}
+                width={100}
+                height={100}
+                alt="person3"
+                className="object-cover object-center w-full h-full"
+              />
+            </div>
+            <p className="relative text-gray-400 -top-4 p-4">
+              "Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Dignissimos quos, a quae voluptas voluptatum qui molestias quidem
+              laborum eos labore reiciendis numquam aperiam animi molestiae."
+              <span className="flex flex-col items-end mt-2 text-sm">
+                - Benjamin Anderson -
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 className="text-2xl text-slate-50 text-center mt-16 mb-8">
+          Want to get involved?
+        </h2>
+        <p className="text-gray-400 text-center max-w-xs flex mx-auto">
+          Sed ultrices nisl velit, eu ornare est ullamcorper a. Nunc quis nibh
+          magna. Proin risus erat, fringilla vel purus.
+        </p>
+        <button
+          type="button"
+          className="flex mx-auto mt-8 text-[#20E3A1] bg-[#0E1436] border-2 w-fit px-4 py-2 rounded-tr-lg border-[#20E3A1] mb-8"
+        >
+          Join Our Community
+        </button>
+      </div>
+      <div className="w-full bg-black bg-opacity-20">
+        <div className="flex items-start pt-8 justify-around rounded-md md:justify-between max-w-screen-xl text-slate-50 mx-auto p-4 mt-20 md:h-40">
+          <div>
+            <Image src={logo} alt="Logo" width={100} height={100} />
+          </div>
+          <div className="">
+            <ul className="flex flex-col md:flex-row gap-4">
+              <li>
+                <a href="#">Community</a>
+              </li>
+              <li>
+                <a href="#">Technology</a>
+              </li>
+              <li>
+                <a href="#">About us</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+              <li>
+                <a href="#">Careers</a>
+              </li>
+              <li>
+                <a href="#">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="flex items-center justify-between w-full my-6 px-8">
+        <h4 className="text-slate-50 text-xs">
+          @ Copyright 2023, All Rights Reserved by Lakshan Rukantha
+        </h4>
+        <div className="flex flex-row gap-4">
+          <a href="#">
+            <FaLinkedin className="w-6 h-6 text-slate-50" />
+          </a>
+          <a href="#">
+            <FaFacebook className="w-6 h-6 text-slate-50" />
+          </a>
+          <a href="#">
+            <FaTwitter className="w-6 h-6 text-slate-50" />
+          </a>
         </div>
       </div>
     </>
