@@ -1,4 +1,5 @@
 import NavBar from "@/components/NavBar";
+import Head from "next/head";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import { FaLinkedin, FaFacebook, FaTwitter } from "react-icons/fa";
@@ -21,6 +22,9 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>API Of Blockchains</title>
+      </Head>
       <NavBar />
       <div className="flex flex-col w-full h-full justify-center pt-32">
         <Image
@@ -132,7 +136,7 @@ export default function Home() {
           </p>
           <button
             type="button"
-            className="text-[#20E3A1] bg-[#0E1436] border-2 w-fit px-4 py-2 rounded-tr-lg border-[#20E3A1] mb-8"
+            className="text-[#20E3A1] bg-[#0E1436] border-2 w-fit px-4 py-2 rounded-tr-lg border-[#20E3A1] mb-8 hover:scale-105 transition-all ease-in-out"
           >
             Read More
           </button>
@@ -146,7 +150,7 @@ export default function Home() {
           Testimonials from lovely previous buyers.
         </h2>
         <div className="grid grid-cols-1 gap-4 place-items-center md:grid-cols-2 lg:grid-cols-3 my-8">
-          <div className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out">
+          <div className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out cursor-pointer">
             <div className="relative flex items-center justify-center -top-8 w-16 h-16 mx-auto rounded-full overflow-hidden border-4 border-x-transparent border-y-[#20E3A1]">
               <Image
                 src={person01}
@@ -165,7 +169,7 @@ export default function Home() {
               </span>
             </p>
           </div>
-          <div className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out">
+          <div className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out cursor-pointer">
             <div className="relative -top-8 w-16 h-16 mx-auto rounded-full overflow-hidden border-4 border-x-transparent border-y-[#20E3A1]">
               <Image
                 src={person02}
@@ -184,7 +188,7 @@ export default function Home() {
               </span>
             </p>
           </div>
-          <div className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out">
+          <div className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out cursor-pointer">
             <div className="relative -top-8 w-16 h-16 mx-auto rounded-full overflow-hidden border-4 border-x-transparent border-y-[#20E3A1]">
               <Image
                 src={person03}
@@ -215,7 +219,7 @@ export default function Home() {
         </p>
         <button
           type="button"
-          className="flex mx-auto mt-8 text-[#20E3A1] bg-[#0E1436] border-2 w-fit px-4 py-2 rounded-tr-lg border-[#20E3A1] mb-8"
+          className="flex mx-auto mt-8 text-[#20E3A1] bg-[#0E1436] border-2 w-fit px-4 py-2 rounded-tr-lg border-[#20E3A1] mb-8 hover:scale-105 transition-all ease-in-out"
         >
           Join Our Community
         </button>
@@ -223,26 +227,28 @@ export default function Home() {
       <div className="w-full bg-black bg-opacity-20">
         <div className="flex items-start pt-8 justify-around rounded-md md:justify-between max-w-screen-xl text-slate-50 mx-auto p-4 mt-20 md:h-40">
           <div>
-            <Image src={logo} alt="Logo" width={100} height={100} />
+            <a href="#">
+              <Image src={logo} alt="Logo" width={100} height={100} />
+            </a>
           </div>
-          <div className="">
+          <div>
             <ul className="flex flex-col md:flex-row gap-4">
-              <li>
+              <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
                 <a href="#">Community</a>
               </li>
-              <li>
+              <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
                 <a href="#">Technology</a>
               </li>
-              <li>
+              <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
                 <a href="#">About us</a>
               </li>
-              <li>
+              <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
                 <a href="#">Blog</a>
               </li>
-              <li>
+              <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
                 <a href="#">Careers</a>
               </li>
-              <li>
+              <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
                 <a href="#">Contact us</a>
               </li>
             </ul>
@@ -251,7 +257,13 @@ export default function Home() {
       </div>
       <div className="flex items-center justify-between w-full my-6 px-8">
         <h4 className="text-slate-50 text-xs">
-          @ Copyright 2023, All Rights Reserved by Lakshan Rukantha
+          @ Copyright 2023, All Rights Reserved by{" "}
+          <a
+            className="text-[#20E3A1] underline"
+            href="https://lakshanrukantha.github.io/"
+          >
+            Lakshan Rukantha
+          </a>
         </h4>
         <div className="flex flex-row gap-4">
           <a href="#">
