@@ -1,8 +1,10 @@
 import NavBar from "@/components/NavBar";
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { FaLinkedin, FaFacebook, FaTwitter } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import logo from "../../public/assets/images/logo.png";
 import robots01 from "../../public/assets/images/robots-01.png";
 import polygon01 from "../../public/assets/images/polygon-1.png";
@@ -16,17 +18,86 @@ import robots02 from "../../public/assets/images/robots-02.png";
 import person01 from "../../public/assets/images/person-01.png";
 import person02 from "../../public/assets/images/person-02.png";
 import person03 from "../../public/assets/images/person-03.png";
+import { useEffect } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+type CardItemsType = {
+  image: StaticImageData;
+  title: string;
+  subTitle: string;
+};
+
+type TestimonialType = {
+  image: StaticImageData;
+  description: string;
+  name: string;
+};
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      //once: true
+    });
+  }, []);
+
+  const cardItems: CardItemsType[] = [
+    {
+      image: rect1,
+      title: "community- owned API of blockchains.",
+      subTitle:
+        "Another benefit of AI blockchains is their potential to enable new applications and use cases.",
+    },
+    {
+      image: rect2,
+      title: "community- owned API of blockchains.",
+      subTitle:
+        "Another benefit of AI blockchains is their potential to enable new applications and use cases.",
+    },
+    {
+      image: rect3,
+      title: "community- owned API of blockchains.",
+      subTitle:
+        "Another benefit of AI blockchains is their potential to enable new applications and use cases.",
+    },
+    {
+      image: rect4,
+      title: "community- owned API of blockchains.",
+      subTitle:
+        "Another benefit of AI blockchains is their potential to enable new applications and use cases.",
+    },
+  ];
+
+  const testimonials: TestimonialType[] = [
+    {
+      image: person01,
+      description:
+        '"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quos, a quae voluptas voluptatum qui molestias quidem laborum eos labore reiciendis numquam aperiam animi molestiae."',
+      name: '"Ethan Brown"',
+    },
+    {
+      image: person02,
+      description:
+        '"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quos, a quae voluptas voluptatum qui molestias quidem laborum eos labore reiciendis numquam aperiam animi molestiae."',
+      name: '"Sophia Garcia"',
+    },
+    {
+      image: person03,
+      description:
+        '"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quos, a quae voluptas voluptatum qui molestias quidem laborum eos labore reiciendis numquam aperiam animi molestiae."',
+      name: '"Benjamin Anderson"',
+    },
+  ];
+
   return (
     <>
       <Head>
         <title>API Of Blockchains</title>
       </Head>
       <NavBar />
-      <div className="flex flex-col w-full h-full justify-center pt-32">
+      <div
+        className="flex flex-col w-full h-full justify-center pt-32"
+        data-aos="fade-in"
+      >
         <Image
           className="absolute top-0 sm:top-16 -z-10"
           src={polygon02}
@@ -49,7 +120,7 @@ export default function Home() {
           height={200}
         />
         <h2 className="text-center text-[#20E3A1] text-2xl pt-8 pb-2">
-          Community-Owned
+          Community - Owned
         </h2>
         <h1 className="text-center text-slate-50 text-4xl font-jaapokkiSubtract">
           API Of Blockchains.
@@ -67,66 +138,31 @@ export default function Home() {
           With AI algorithms running on the network
         </h2>
         <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 my-16 p-8 w-full place-items-center">
-          <div className="relative transition ease-in-out hover:scale-105">
-            <Image src={rect1} alt="card1" width={250} height={250} />
-            <div className="absolute border-4 border-zinc-500 hover:border-[#20E3A1] flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
-              <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
-                <h3 className="text-slate-50 h-fit  p-1">
-                  Community- owned API of blockchains.
-                </h3>
-                <h4 className="text-slate-50 text-sm  p-1">
-                  Another benefit of AI blockchains is their potential to enable
-                  new applications and use cases.
-                </h4>
+          {cardItems.map((item, index: number) => (
+            <div
+              key={index}
+              className="relative transition ease-in-out hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay={200 * index}
+            >
+              <Image src={item.image} alt="card1" width={250} height={250} />
+              <div className="absolute border-2 border-zinc-500 hover:border-[#20E3A1] flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
+                <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
+                  <h3 className="text-slate-50 h-fit  p-1">{item.title}</h3>
+                  <h4 className="text-slate-50 text-sm  p-1">
+                    {item.subTitle}
+                  </h4>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="relative transition ease-in-out hover:scale-105">
-            <Image src={rect2} alt="card1" width={250} height={250} />
-            <div className="absolute border-4 border-zinc-500 hover:border-[#20E3A1] flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
-              <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
-                <h3 className="text-slate-50 h-fit p-1">
-                  Community- owned API of blockchains.
-                </h3>
-                <h4 className="text-slate-50 text-sm p-1">
-                  Another benefit of AI blockchains is their potential to enable
-                  new applications and use cases.
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="relative transition ease-in-out hover:scale-105">
-            <Image src={rect3} alt="card1" width={250} height={250} />
-            <div className="absolute border-4 border-zinc-500 hover:border-[#20E3A1] flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
-              <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
-                <h3 className="text-slate-50 h-fit p-1">
-                  Community- owned API of blockchains.
-                </h3>
-                <h4 className="text-slate-50 text-sm p-1">
-                  Another benefit of AI blockchains is their potential to enable
-                  new applications and use cases.
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="relative transition ease-in-out hover:scale-105">
-            <Image src={rect4} alt="card1" width={250} height={250} />
-            <div className="absolute border-4 border-zinc-500 hover:border-[#20E3A1] flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
-              <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
-                <h3 className="text-slate-50 h-fit p-1">
-                  Community- owned API of blockchains.
-                </h3>
-                <h4 className="text-slate-50 text-sm p-1">
-                  Another benefit of AI blockchains is their potential to enable
-                  new applications and use cases.
-                </h4>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-      <div className="container max-w-screen-xl flex flex-col mx-auto md:flex-row md:justify-center w-full place-items-center mt-20 p-8 bg-black bg-opacity-20 rounded-md">
-        <div className="flex flex-col align-middle justify-around md:w-1/3 h-full">
+      <div className="container max-w-screen-xl flex flex-col mx-auto md:flex-row md:justify-center w-full place-items-center mt-20 p-8 bg-zinc-700 md:items-stretch rounded-md">
+        <div
+          className="flex flex-col align-middle justify-center md:w-1/3"
+          data-aos="fade-up"
+        >
           <h2 className="text-slate-50 text-3xl text-left my-2">
             Build A Stunning Social Network
           </h2>
@@ -136,13 +172,19 @@ export default function Home() {
           </p>
           <button
             type="button"
-            className="text-[#20E3A1] bg-[#0E1436] border-2 w-fit px-4 py-2 rounded-tr-lg border-[#20E3A1] mb-8 hover:scale-105 transition-all ease-in-out"
+            className="text-[#20E3A1] bg-[#0E1436] border-2 w-fit px-4 py-2 rounded-tr-lg border-[#20E3A1] mb-8 active:scale-95 hover:brightness-125 transition-all ease-in-out"
           >
             Read More
           </button>
         </div>
-        <div className="relative -left-8 w-full  md:w-1/2">
-          <Image src={robots02} alt="card1" width={650} height={250} />
+        <div className="relative -left-8 w-full  md:w-1/2" data-aos="fade-up">
+          <Image
+            src={robots02}
+            alt="card1"
+            width={650}
+            height={250}
+            className="h-full"
+          />
         </div>
       </div>
       <div className="mt-16">
@@ -150,66 +192,33 @@ export default function Home() {
           Testimonials from lovely previous buyers.
         </h2>
         <div className="grid grid-cols-1 gap-4 place-items-center md:grid-cols-2 lg:grid-cols-3 my-8">
-          <div className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out cursor-pointer">
-            <div className="relative flex items-center justify-center -top-8 w-16 h-16 mx-auto rounded-full overflow-hidden border-4 border-x-transparent border-y-[#20E3A1]">
-              <Image
-                src={person01}
-                width={100}
-                height={100}
-                alt="person1"
-                className="object-cover object-center w-full h-full"
-              />
+          {testimonials.map((item, index: number) => (
+            <div
+              key={index}
+              className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out cursor-pointer"
+              data-aos="zoom-in"
+              data-aos-delay={200 * index}
+            >
+              <div className="relative flex items-center justify-center -top-8 w-16 h-16 mx-auto rounded-full overflow-hidden border-4 border-x-transparent border-y-[#20E3A1]">
+                <Image
+                  src={item.image}
+                  width={100}
+                  height={100}
+                  alt="person1"
+                  className="object-cover object-center w-full h-full"
+                />
+              </div>
+              <p className="relative text-gray-400 -top-4 p-4">
+                {item.description}
+                <span className="flex flex-col items-end mt-2 text-sm">
+                  - {item.name} -
+                </span>
+              </p>
             </div>
-            <p className="relative text-gray-400 -top-4 p-4">
-              "Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Dignissimos quos, a quae voluptas voluptatum qui molestias quidem
-              laborum eos labore reiciendis numquam aperiam animi molestiae."
-              <span className="flex flex-col items-end mt-2 text-sm">
-                - Ethan Brown -
-              </span>
-            </p>
-          </div>
-          <div className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out cursor-pointer">
-            <div className="relative -top-8 w-16 h-16 mx-auto rounded-full overflow-hidden border-4 border-x-transparent border-y-[#20E3A1]">
-              <Image
-                src={person02}
-                width={100}
-                height={100}
-                alt="person2"
-                className="object-cover object-center w-full h-full"
-              />
-            </div>
-            <p className="relative text-gray-400 -top-4 p-4">
-              "Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Dignissimos quos, a quae voluptas voluptatum qui molestias quidem
-              laborum eos labore reiciendis numquam aperiam animi molestiae."
-              <span className="flex flex-col items-end mt-2 text-sm">
-                - Sophia Garcia -
-              </span>
-            </p>
-          </div>
-          <div className="w-80 h-50 bg-black bg-opacity-20 my-10 rounded-md border border-[#20E3A1] hover:scale-105 transition-all ease-in-out cursor-pointer">
-            <div className="relative -top-8 w-16 h-16 mx-auto rounded-full overflow-hidden border-4 border-x-transparent border-y-[#20E3A1]">
-              <Image
-                src={person03}
-                width={100}
-                height={100}
-                alt="person3"
-                className="object-cover object-center w-full h-full"
-              />
-            </div>
-            <p className="relative text-gray-400 -top-4 p-4">
-              "Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Dignissimos quos, a quae voluptas voluptatum qui molestias quidem
-              laborum eos labore reiciendis numquam aperiam animi molestiae."
-              <span className="flex flex-col items-end mt-2 text-sm">
-                - Benjamin Anderson -
-              </span>
-            </p>
-          </div>
+          ))}
         </div>
       </div>
-      <div>
+      <div data-aos="fade-up">
         <h2 className="text-2xl text-slate-50 text-center mt-16 mb-8">
           Want to get involved?
         </h2>
@@ -219,7 +228,7 @@ export default function Home() {
         </p>
         <button
           type="button"
-          className="flex mx-auto mt-8 text-[#20E3A1] bg-[#0E1436] border-2 w-fit px-4 py-2 rounded-tr-lg border-[#20E3A1] mb-8 hover:scale-105 transition-all ease-in-out"
+          className="flex mx-auto mt-8 text-[#20E3A1] bg-[#0E1436] border-2 w-fit px-4 py-2 rounded-tr-lg border-[#20E3A1] mb-8 active:scale-95 hover:brightness-125 transition-all ease-in-out"
         >
           Join Our Community
         </button>
