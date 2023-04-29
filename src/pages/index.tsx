@@ -1,6 +1,5 @@
 import NavBar from "@/components/NavBar";
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import Image, { StaticImageData } from "next/image";
 import { FaLinkedin, FaFacebook, FaTwitter } from "react-icons/fa";
 import AOS from "aos";
@@ -19,6 +18,7 @@ import person01 from "../../public/assets/images/person-01.png";
 import person02 from "../../public/assets/images/person-02.png";
 import person03 from "../../public/assets/images/person-03.png";
 import { useEffect } from "react";
+import Link from "next/link";
 
 type CardItemsType = {
   image: StaticImageData;
@@ -236,29 +236,29 @@ export default function Home() {
       <div className="w-full bg-black bg-opacity-20">
         <div className="flex items-start pt-8 justify-around rounded-md md:justify-between max-w-screen-xl text-slate-50 mx-auto p-4 mt-20 md:h-40">
           <div>
-            <a href="#">
+            <Link href="#">
               <Image src={logo} alt="Logo" width={100} height={100} />
-            </a>
+            </Link>
           </div>
           <div>
             <ul className="flex flex-col md:flex-row gap-4">
               <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
-                <a href="#">Community</a>
+                <Link href="#">Community</Link>
               </li>
               <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
-                <a href="#">Technology</a>
+                <Link href="#">Technology</Link>
               </li>
               <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
-                <a href="#">About us</a>
+                <Link href="#">About us</Link>
               </li>
               <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
-                <a href="#">Blog</a>
+                <Link href="#">Blog</Link>
               </li>
               <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
-                <a href="#">Careers</a>
+                <Link href="#">Careers</Link>
               </li>
               <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
-                <a href="#">Contact us</a>
+                <Link href="#">Contact us</Link>
               </li>
             </ul>
           </div>
@@ -267,23 +267,23 @@ export default function Home() {
       <div className="flex items-center justify-between w-full my-6 px-8">
         <h4 className="text-slate-50 text-xs">
           @ Copyright 2023, All Rights Reserved by{" "}
-          <a
+          <Link
             className="text-[#20E3A1] underline"
             href="https://lakshanrukantha.github.io/"
           >
             Lakshan Rukantha
-          </a>
+          </Link>
         </h4>
         <div className="flex flex-row gap-4">
-          <a href="#">
+          <Link href="#">
             <FaLinkedin className="w-6 h-6 text-slate-50" />
-          </a>
-          <a href="#">
+          </Link>
+          <Link href="#">
             <FaFacebook className="w-6 h-6 text-slate-50" />
-          </a>
-          <a href="#">
+          </Link>
+          <Link href="#">
             <FaTwitter className="w-6 h-6 text-slate-50" />
-          </a>
+          </Link>
         </div>
       </div>
     </>

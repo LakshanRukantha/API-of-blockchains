@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import logo from "../../public/assets/images/logo.png";
 
 const NavBar = () => {
   return (
     <nav className="flex justify-between align-middle py-4 px-8 w-full bg-zinc-800 shadow z-10 fixed">
-      <a href="#">
+      <Link href="#">
         <Image src={logo} alt="Logo" width={100} height={100} />
-      </a>
+      </Link>
       <div className="flex align-middle">
         <button
           type="button"
