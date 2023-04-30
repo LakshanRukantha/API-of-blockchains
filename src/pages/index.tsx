@@ -50,7 +50,7 @@ export default function Home() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      //once: true
+      once: true,
     });
   }, []);
 
@@ -113,21 +113,21 @@ export default function Home() {
         data-aos="fade-in"
       >
         <Image
-          className="absolute top-0 sm:top-16 -z-10"
+          className="absolute select-none top-0 sm:top-16 -z-10"
           src={polygon02}
           alt="Logo"
           width={300}
           height={300}
         />
         <Image
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:-ml-16 mt-4 -z-10"
+          className="absolute select-none top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:-ml-16 mt-4 -z-10"
           src={polygon01}
           alt="Logo"
           width={600}
           height={600}
         />
         <Image
-          className="absolute right-8 opacity-0 sm:opacity-100 -z-10"
+          className="absolute select-none right-8 opacity-0 sm:opacity-100 -z-10"
           src={polygon03}
           alt="Logo"
           width={200}
@@ -140,7 +140,7 @@ export default function Home() {
           API Of Blockchains.
         </h1>
         <Image
-          className="m-auto py-8 pr-16"
+          className="m-auto select-none py-8 pr-16"
           src={robots01}
           alt="Logo"
           width={800}
@@ -159,7 +159,13 @@ export default function Home() {
               data-aos="fade-up"
               data-aos-delay={200 * index}
             >
-              <Image src={item.image} alt="card1" width={250} height={250} />
+              <Image
+                src={item.image}
+                className="select-none"
+                alt="card1"
+                width={250}
+                height={250}
+              />
               <div className="absolute border-2 border-zinc-500 hover:border-[#20E3A1] flex flex-col justify-end w-full hover:backdrop-brightness-50 rounded-2xl h-full cursor-pointer bottom-0 p-2">
                 <div className="bg-gray-950 bg-opacity-50 rounded-2xl">
                   <h3 className="text-slate-50 h-fit  p-1">{item.title}</h3>
@@ -197,7 +203,7 @@ export default function Home() {
             alt="card1"
             width={650}
             height={250}
-            className="h-full"
+            className="h-full select-none"
           />
         </div>
       </div>
@@ -219,7 +225,7 @@ export default function Home() {
                   width={100}
                   height={100}
                   alt="person1"
-                  className="object-cover object-center w-full h-full"
+                  className="object-cover select-none object-center w-full h-full"
                 />
               </div>
               <p className="relative text-gray-400 -top-4 p-4">
@@ -251,7 +257,13 @@ export default function Home() {
         <div className="flex items-start pt-8 justify-around rounded-md md:justify-between max-w-screen-xl text-slate-50 mx-auto p-4 mt-20 md:h-40">
           <div>
             <Link href="#">
-              <Image src={logo} alt="Logo" width={100} height={100} />
+              <Image
+                src={logo}
+                alt="Logo"
+                width={100}
+                height={100}
+                className="select-none"
+              />
             </Link>
           </div>
           <div>
