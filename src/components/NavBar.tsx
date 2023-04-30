@@ -30,7 +30,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="flex justify-between align-middle py-4 px-8 w-full bg-zinc-800 shadow z-10 fixed">
+    <nav className="flex justify-between align-middle h-16 lg:h-auto py-4 px-8 w-full bg-zinc-800 shadow z-10 fixed">
       <Link href="#">
         <Image src={logo} alt="Logo" width={100} height={100} />
       </Link>
@@ -39,7 +39,7 @@ const NavBar = () => {
           {menuItems.map((item: MenuItemsType, index: number) => (
             <li
               key={index}
-              className="uppercase text-slate-50 hover:text-[#20E3A1] cursor-pointer"
+              className="uppercase active:scale-95 select-none text-slate-50 hover:text-[#20E3A1] cursor-pointer"
             >
               <Link href={item.link}>{item.name}</Link>
             </li>
@@ -50,15 +50,29 @@ const NavBar = () => {
         {isOpen ? (
           <AiOutlineClose
             onClick={handleClose}
-            className="text-2xl text-slate-50 self-center"
+            className="text-2xl select-none cursor-pointer text-slate-50 self-center"
           />
         ) : (
           <AiOutlineMenu
             onClick={handleOpen}
-            className="text-2xl text-slate-50 self-center"
+            className="text-2xl select-none cursor-pointer text-slate-50 self-center"
           />
         )}
       </div>
+      <ul
+        className={`absolute bg-zinc-900 left-0 ${
+          isOpen ? "top-16" : "-top-72"
+        } w-full p-4 gap-4 h-72 place-items-center justify-center flex flex-col items-center lg:hidden`}
+      >
+        {menuItems.map((item: MenuItemsType, index: number) => (
+          <li
+            key={index}
+            className="uppercase active:scale-95 focus:text-[#20E3A1] select-none text-slate-50 hover:text-[#20E3A1] cursor-pointer"
+          >
+            <Link href={item.link}>{item.name}</Link>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 };
