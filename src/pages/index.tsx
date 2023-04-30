@@ -32,6 +32,20 @@ type TestimonialType = {
   name: string;
 };
 
+type MenuItemsType = {
+  name: string;
+  link: string;
+};
+
+const menuItems: MenuItemsType[] = [
+  { name: "About Us", link: "#" },
+  { name: "Technology", link: "#" },
+  { name: "Blog", link: "#" },
+  { name: "Community", link: "#" },
+  { name: "Careers", link: "#" },
+  { name: "Contact Us", link: "#" },
+];
+
 export default function Home() {
   useEffect(() => {
     AOS.init({
@@ -242,24 +256,14 @@ export default function Home() {
           </div>
           <div>
             <ul className="flex flex-col md:flex-row gap-4">
-              <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
-                <Link href="#">Community</Link>
-              </li>
-              <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
-                <Link href="#">Technology</Link>
-              </li>
-              <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
-                <Link href="#">About us</Link>
-              </li>
-              <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
-                <Link href="#">Blog</Link>
-              </li>
-              <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
-                <Link href="#">Careers</Link>
-              </li>
-              <li className="hover:text-[#20E3A1] transition-colors ease-in-out">
-                <Link href="#">Contact us</Link>
-              </li>
+              {menuItems.map((item: MenuItemsType, index: number) => (
+                <li
+                  key={index}
+                  className="hover:text-[#20E3A1] transition-colors ease-in-out"
+                >
+                  <Link href={item.link}>{item.name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

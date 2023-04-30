@@ -5,17 +5,29 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import logo from "../../public/assets/images/logo.png";
 
 const NavBar = () => {
-  const menuItems = [
-    "Home",
-    "Community",
-    "Technology",
-    "About Us",
-    "Blog",
-    "Careers",
-    "About Us",
+  type MenuItemsType = {
+    name: string;
+    link: string;
+  };
+
+  const menuItems: MenuItemsType[] = [
+    { name: "About Us", link: "#" },
+    { name: "Technology", link: "#" },
+    { name: "Blog", link: "#" },
+    { name: "Community", link: "#" },
+    { name: "Careers", link: "#" },
+    { name: "Contact Us", link: "#" },
   ];
 
-  const [open, isOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
 
   return (
     <nav className="flex justify-between align-middle py-4 px-8 w-full bg-zinc-800 shadow z-10 fixed">
@@ -24,21 +36,27 @@ const NavBar = () => {
       </Link>
       <div className="hidden lg:flex align-middle w-full justify-end">
         <ul className="flex items-center gap-4">
-          {menuItems.map((item: string, index: number) => (
+          {menuItems.map((item: MenuItemsType, index: number) => (
             <li
               key={index}
               className="uppercase text-slate-50 hover:text-[#20E3A1] cursor-pointer"
             >
-              <Link href="#">{item}</Link>
+              <Link href={item.link}>{item.name}</Link>
             </li>
           ))}
         </ul>
       </div>
       <div className="flex items-center w-full justify-end lg:hidden">
-        {open ? (
-          <AiOutlineClose className="text-2xl text-slate-50 self-center" />
+        {isOpen ? (
+          <AiOutlineClose
+            onClick={handleClose}
+            className="text-2xl text-slate-50 self-center"
+          />
         ) : (
-          <AiOutlineMenu className="text-2xl text-slate-50 self-center" />
+          <AiOutlineMenu
+            onClick={handleOpen}
+            className="text-2xl text-slate-50 self-center"
+          />
         )}
       </div>
     </nav>
